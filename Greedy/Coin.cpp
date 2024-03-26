@@ -21,28 +21,34 @@
 
 int main()
 {
-    int N,K;
-    std::cin>>N;
-    std::cin>>K;
+    int N, K;
+    std::cin >> N;
+    std::cin >> K;
 
     int* Valuearr = new int[N];
 
-    int cnt = 0;
-    for(int i=0;i<N;++i)
+    for (int i = 0; i < N; ++i)
     {
-        if(K==0)
+        std::cin >> Valuearr[i];
+    }
+
+    int cnt = 0;
+    for (int i = N-1; i>0 ; --i)
+    {
+        if (K == 0)
         {
             break;
         }
-        if(K/Valuearr[i]!=0)
+        if (K / Valuearr[i] != 0)
         {
-            K = K - (K/Valuearr[i])*Valuearr[i];
-            cnt += K/Valuearr[i];
+            cnt += (K / Valuearr[i]);
+            K = K - (K / Valuearr[i]) * Valuearr[i];
+            
 
         }
     }
 
-    std::cout<<cnt<<std::endl;
+    std::cout << cnt << std::endl;
 
     return 0;
 }
