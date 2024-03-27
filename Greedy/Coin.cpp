@@ -33,7 +33,7 @@ int main()
     }
 
     int cnt = 0;
-    for (int i = N-1; i>0 ; --i)
+    for (int i = N - 1; i >-1; --i)
     {
         if (K == 0)
         {
@@ -43,12 +43,14 @@ int main()
         {
             cnt += (K / Valuearr[i]);
             K = K - (K / Valuearr[i]) * Valuearr[i];
-            
+
 
         }
     }
 
     std::cout << cnt << std::endl;
+    delete[] Valuearr;
+
 
     return 0;
 }
